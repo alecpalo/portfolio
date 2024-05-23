@@ -1,7 +1,16 @@
 import { css } from '../../styled-system/css';
 
+
+const main = css({
+    backgroundColor: '#95edff',
+})
+
 export default function Home() {
   return (
-      <div className={css({ fontSize: "2xl", fontWeight: 'bold' })}>Hello 🐼!</div>
+      <main className={main}>
+          <div>
+              Hello 🐼!
+          </div>
+      </main>
   )
 }
