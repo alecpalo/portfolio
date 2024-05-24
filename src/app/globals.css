@@ -1,1 +1,42 @@
 @layer reset, base, tokens, recipes, utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.cloud {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.cloud div {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cloud .part1 {
+    width: 60px;
+    height: 60px;
+    margin-right: -20px;
+}
+
+.cloud .part2 {
+    width: 80px;
+    height: 80px;
+    margin-right: -20px;
+}
+
+.cloud .part3 {
+    width: 60px;
+    height: 60px;
+    margin-right: -20px;
+}
+
+.cloud .part4 {
+    width: 40px;
+    height: 40px;
+}
