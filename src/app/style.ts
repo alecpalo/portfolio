@@ -33,7 +33,13 @@ export const theme = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+    @font-face {
+        font-family: 'JetBrainsMono';
+        src: url('/fonts/JetBrainsMonoNerdFont-Regular.ttf') format('truetype'),
+        url('/fonts/JetBrainsMonoNerdFont-Bold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
     body {
         margin: 0;
@@ -89,7 +95,7 @@ export const Title = styled.h1`
     }
 `;
 
-export const Name = styled.h1`
+export const Name = styled.span`
     font-size: 4rem;
     color: ${({ theme }) => theme.colors.rosewater};
     margin: 0;
@@ -359,7 +365,7 @@ export const IconLink = styled.a<{ color: string }>`
 export const ProjectTitle = styled.h2`
     font-size: 2rem;
     margin-bottom: 10px;
-    color: ${({ theme }) => theme.colors.overlay2}; // Code comment color
+    color: ${({ theme }) => theme.colors.mauve}; // Code comment color
 
     @media (max-width: 768px) {
         font-size: 1.5rem;
@@ -413,5 +419,33 @@ export const LearningsContent = styled.p`
 
     @media (max-width: 768px) {
         font-size: 1rem;
+    }
+`;
+
+export const ContactContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: ${({ theme }) => theme.colors.base}; // Background color
+    padding: 20px;
+`;
+
+export const ContactText = styled.p`
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.colors.text}; // Text color
+    text-align: center;
+
+    a {
+        color: ${({ theme }) => theme.colors.blue}; // Link color
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
     }
 `;

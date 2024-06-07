@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Section, ContentWrapper, Title, Name, Bio} from './style';
 import Modal from '@/_components/modal';
+import Contact from '../_components/contact';
 import ProjectsList from "@/_components/projects/projectsList";
 import { bio } from './utils';
 import ExperiencesList from "@/_components/experiences/experiencesList";
@@ -80,10 +81,11 @@ export default function Home() {
                             }}>
                                 <Title>
                                     Hey, I&apos;m&nbsp;
+                                    <Name>
+                                        Alec
+                                    </Name>
                                 </Title>
-                                <Name>
-                                     Alec
-                                </Name>
+
                             </div>
                         )}
                         {section === 'Bio' && (
@@ -100,14 +102,7 @@ export default function Home() {
                             <ProjectsList openModal={openModal}/>
                         )}
                         {section == 'Contact' && (
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                height: '100vh'
-                            }}>
-
-                            </div>
+                            <Contact/>
                         )}
                     </ContentWrapper>
                 </Section>
