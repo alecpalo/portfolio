@@ -26,7 +26,7 @@ const NavBar: React.FC<NavBarProps> = ({ sections, currentSection, onSectionClic
                         <NavItem
                             key={section}
                             color={colorMapping[section]}
-                            active={currentSection === section}
+                            active={currentSection == section}
                             onClick={() => onSectionClick(section)}
                         >
                             {section !== 'Title' ? section : ""}
