@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: ${props => props.theme.colors.crust};
+        background-color: ${props => props.theme.colors.background};
         color: ${props => props.theme.colors.text};
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
@@ -63,14 +63,14 @@ export const Section = styled(motion.section)`
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    background-color: ${({ theme }) => theme.colors.background};
+    // background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const ContentWrapper = styled.div`
     width: 100%;
     max-width: 1200px;
+    height: 100%;
     padding: 20px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,6 +86,17 @@ export const Title = styled.h1`
         font-size: 2.5rem;
     }
 `;
+
+export const Name = styled.h1`
+    font-size: 4rem;
+    color: ${({ theme }) => theme.colors.rosewater};
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
+`;
+
 
 export const Bio = styled.p`
     font-size: 1.5rem;
@@ -142,8 +153,8 @@ export const WorkExperience = styled(motion.div)`
     &:hover {
         transform: scale(1.05);
         z-index: 1;
-        color: ${({ theme }) => theme.colors.flamingo};
-        box-shadow: 0 0 24px ${({ theme }) => theme.colors.flamingo};
+        color: ${({ theme }) => theme.colors.peach};
+        box-shadow: 0 0 24px ${({ theme }) => theme.colors.peach};
         transition: transform 0.2s, color 0.2s, box-shadow 0.2s;
     }
 
@@ -171,8 +182,8 @@ export const Project = styled(motion.div)`
     &:hover {
         transform: scale(1.05);
         z-index: 1;
-        color: ${({ theme }) => theme.colors.blue};
-        box-shadow: 0 0 16px ${({ theme }) => theme.colors.blue};
+        color: ${({ theme }) => theme.colors.teal};
+        box-shadow: 0 0 16px ${({ theme }) => theme.colors.teal};
         transition: transform 0.2s, color 0.2s, box-shadow 0.2s;
     }
 
@@ -281,4 +292,56 @@ export const ModalImage = styled.img`
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 20px;
+`;
+
+
+export const Nav = styled.nav`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    z-index: 1000;
+`;
+
+export const NavContainer = styled.div`
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const NavSection = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const NavItem = styled.div<{ active: boolean; color: string }>`
+    margin: 0 1rem;
+    color: ${({ active, color, theme }) => (active ? color : theme.colors.text)};
+    font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
+    transition: color 0.2s, font-weight 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        color: ${({  color }) => color};
+        font-weight: bold;
+    }
+`;
+
+export const SocialIcons = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const IconLink = styled.a<{ color: string }>`
+    margin: 0 0.5rem;
+    color: ${({  theme }) => theme.colors.subtext};
+    transition: color 0.3s;
+
+    &:hover {
+        color: ${({  color }) => color};
+    }
 `;
