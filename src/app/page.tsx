@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Container, Section, ContentWrapper, Title, Name, Bio, ProjectList, Project, ModalTitle, ModalDate, ModalDetails, ModalList, ModalListItem, ModalImage } from './style';
+import { Container, Section, ContentWrapper, Title, Name, Bio} from './style';
 import Modal from '@/_components/modal';
-import { projects, bio } from './utils';
-import Experience from "@/_components/Experience";
+import ProjectsList from "@/_components/projects/projectsList";
+import { bio } from './utils';
+import ExperiencesList from "@/_components/experiences/experiencesList";
 import NavBar from "@/_components/nav";
 import { AnimatePresence } from 'framer-motion';
 import AnimatedComponent from "@/_components/animatedComponent";
@@ -93,32 +94,10 @@ export default function Home() {
                             </AnimatedComponent>
                         )}
                         {section === 'Experience' && (
-                            <Experience openModal={openModal}/>
+                            <ExperiencesList openModal={openModal}/>
                         )}
                         {section === 'Projects' && (
-                            <ProjectList>
-                                {projects.map((project, index) => (
-                                    <AnimatedComponent key={index}>
-                                        <Project
-                                            onClick={() => openModal(
-                                                <>
-                                                    <ModalTitle>{project.title}</ModalTitle>
-                                                    <ModalDate>{project.startDate} - {project.endDate}</ModalDate>
-                                                    <ModalImage src={project.image} alt={project.title} />
-                                                    <ModalDetails>{project.details}</ModalDetails>
-                                                    <ModalList>
-                                                        {project.features.map((feature, i) => (
-                                                            <ModalListItem key={i}>{feature}</ModalListItem>
-                                                        ))}
-                                                    </ModalList>
-                                                </>
-                                            )}
-                                        >
-                                            <strong>{project.title}</strong>
-                                        </Project>
-                                    </AnimatedComponent>
-                                ))}
-                            </ProjectList>
+                            <ProjectsList openModal={openModal}/>
                         )}
                         {section == 'Contact' && (
                             <div style={{

@@ -105,7 +105,7 @@ export const Bio = styled.p`
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.subtext};
 
     @media (max-width: 768px) {
         font-size: 1rem;
@@ -125,7 +125,7 @@ export const ExperienceList = styled.div`
     }
 `;
 
-export const ProjectList = styled.div`
+export const Projects = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -167,7 +167,7 @@ export const WorkExperience = styled(motion.div)`
     }
 `;
 
-export const Project = styled(motion.div)`
+export const ProjectContainer = styled(motion.div)`
     cursor: pointer;
     padding: 15px;
     background: ${({ theme }) => theme.colors.overlay2};
@@ -202,7 +202,7 @@ export const Modal = styled(motion.div)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,7 +213,7 @@ export const ModalContent = styled(motion.div)`
     background: ${({ theme }) => theme.colors.crust};
     padding: 20px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 900px;
     width: 90%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: left;
@@ -240,19 +240,27 @@ export const CloseButton = styled.button`
     }
 `;
 
-export const ModalTitle = styled.h2`
+export const ExperienceTitle = styled.h2`
     font-size: 2rem;
     margin-bottom: 10px;
-    color: ${({ theme }) => theme.colors.mauve};
+    color: ${({ theme }) => theme.colors.overlay2}; // Code comment color
 
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
 `;
 
-export const ModalDate = styled.p`
+export const CompanyName = styled.span`
+    color: ${({ theme }) => theme.colors.blue}; // Function color
+`;
+
+export const PositionName = styled.span`
+    color: ${({ theme }) => theme.colors.pink}; // Variable color
+`;
+
+export const ExperienceDate = styled.p`
     font-size: 1rem;
-    color: ${({ theme }) => theme.colors.rosewater};
+    color: ${({ theme }) => theme.colors.lavender}; // Keyword color
     margin-bottom: 20px;
 
     @media (max-width: 768px) {
@@ -260,28 +268,28 @@ export const ModalDate = styled.p`
     }
 `;
 
-export const ModalDetails = styled.p`
+export const ExperienceDetails = styled.p`
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.text}; // Default text color
 
     @media (max-width: 768px) {
         font-size: 1rem;
     }
 `;
 
-export const ModalList = styled.ul`
+export const ResumeList = styled.ul`
     list-style: disc;
     padding-left: 20px;
     margin-bottom: 20px;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.text}; // Default text color
 
     @media (max-width: 768px) {
         padding-left: 15px;
     }
 `;
 
-export const ModalListItem = styled.li`
+export const ResumeListItem = styled.li`
     font-size: 1rem;
     margin-bottom: 10px;
 
@@ -345,5 +353,65 @@ export const IconLink = styled.a<{ color: string }>`
 
     &:hover {
         color: ${({  color }) => color};
+    }
+`;
+
+export const ProjectTitle = styled.h2`
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: ${({ theme }) => theme.colors.overlay2}; // Code comment color
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+`;
+
+export const TechnologyList = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+`;
+
+export const TechnologyItem = styled.li`
+    margin-right: 10px;
+    font-size: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+`;
+
+export const ProjectDescription = styled.p`
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: ${({ theme }) => theme.colors.text}; // Default text color
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+`;
+
+export const ProjectLearnings = styled.div`
+    margin-top: 20px;
+`;
+
+export const LearningsTitle = styled.h3`
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: ${({ theme }) => theme.colors.sky}; // Function color
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
+`;
+
+export const LearningsContent = styled.p`
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.colors.text}; // Default text color
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
     }
 `;
