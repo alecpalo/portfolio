@@ -33,13 +33,15 @@ export const theme = {
 };
 
 export const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
     body {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         background-color: ${props => props.theme.colors.background};
         color: ${props => props.theme.colors.text};
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: 'JetBrains Mono', monospace;
     }
 `;
 

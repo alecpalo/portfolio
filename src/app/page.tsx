@@ -120,7 +120,7 @@ export default function Home() {
                                 ))}
                             </ProjectList>
                         )}
-                        {section == 'Test' && (
+                        {section == 'Contact' && (
                             <div style={{
                                 display: 'flex',
                                 justifyContent: 'center',
