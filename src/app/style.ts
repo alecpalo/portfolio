@@ -115,8 +115,15 @@ export const Bio = styled.p`
 
     @media (max-width: 768px) {
         font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.875rem;
+        padding: 0 0.5rem;
     }
 `;
+
 
 export const ExperienceList = styled.div`
     display: flex;

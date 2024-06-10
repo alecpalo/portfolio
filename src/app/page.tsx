@@ -89,11 +89,11 @@ export default function Home() {
                             </div>
                         )}
                         {section === 'Bio' && (
-                            <AnimatedComponent>
+                            // <AnimatedComponent>
                                 <Bio>
                                     {bio}
                                 </Bio>
-                            </AnimatedComponent>
+                            // </AnimatedComponent>
                         )}
                         {section === 'Experience' && (
                             <ExperiencesList openModal={openModal}/>
