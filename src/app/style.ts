@@ -85,6 +85,47 @@ export const ContentWrapper = styled.div`
     justify-content: center;
 `;
 
+export const TitleContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+`;
+
+export const TextContainer = styled.div`
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+    width: 50%;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px; /* Add some spacing between text and image */
+    }
+`;
+
+export const ImageContainer = styled.div`
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        width: 250px; /* Adjust size on mobile */
+        height: 250px; /* Adjust size on mobile */
+    }
+`;
+
 export const Title = styled.h1`
     font-size: 4rem;
     color: ${({ theme }) => theme.colors.text};
@@ -104,7 +145,6 @@ export const Name = styled.span`
         font-size: 2.5rem;
     }
 `;
-
 
 export const Bio = styled.p`
     font-size: 1.5rem;

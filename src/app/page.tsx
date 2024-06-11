@@ -1,7 +1,7 @@
 'use client';
-
+import Image from "next/image";
 import React, { useEffect, useState } from 'react';
-import { Container, Section, ContentWrapper, Title, Name, Bio} from './style';
+import { Container, Section, ContentWrapper, Title, Name, Bio, ImageContainer, TitleContainer, TextContainer} from './style';
 import Modal from '@/_components/modal';
 import Contact from '../_components/contact';
 import ProjectsList from "@/_components/projects/projectsList";
@@ -76,17 +76,25 @@ export default function Home() {
                 >
                     <ContentWrapper>
                         {section === 'Title' && (
-                            <div style={{
-                                display: 'inline-flex',
-                            }}>
-                                <Title>
-                                    Hey, I&apos;m&nbsp;
-                                    <Name>
-                                        Alec
-                                    </Name>
-                                </Title>
-
-                            </div>
+                            // <Title>
+                            //     Hey, I&apos;m&nbsp;
+                            //     <Name>
+                            //         Alec
+                            //     </Name>
+                            // </Title>
+                            <TitleContainer>
+                                <TextContainer>
+                                    <Title>
+                                        Hey, I&apos;m&nbsp;
+                                        <Name>
+                                            Alec
+                                        </Name>
+                                    </Title>
+                                </TextContainer>
+                                <ImageContainer>
+                                    <Image src="/me.png" alt="Catppuccin Logo" fill={true} />
+                                </ImageContainer>
+                            </TitleContainer>
                         )}
                         {section === 'Bio' && (
                             // <AnimatedComponent>
