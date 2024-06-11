@@ -2,6 +2,7 @@ import React from 'react';
 import { NavItem, Nav, NavContainer, NavSection, SocialIcons, IconLink } from '@/app/style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {useIsMobile} from "@/_components/useIsMobile";
 
 interface NavBarProps {
     sections: string[];
@@ -18,27 +19,34 @@ const colorMapping: { [key: string]: string } = {
 };
 
 const NavBar: React.FC<NavBarProps> = ({ sections, currentSection, onSectionClick }) => {
+    const isMobile = useIsMobile();
     return (
         <Nav>
             <NavContainer>
                 <NavSection>
-                    {sections.map((section) => (
-                        <NavItem
-                            key={section}
-                            color={colorMapping[section]}
-                            active={currentSection == section}
-                            onClick={() => onSectionClick(section)}
-                        >
-                            {section !== 'Title' ? section : ""}
+                    {isMobile ?
+                        <NavItem active={true} color={colorMapping[currentSection]}>
+                            {currentSection}
                         </NavItem>
-                    ))}
+                    :
+                        sections.map((section) => (
+                            <NavItem
+                                key={section}
+                                color={colorMapping[section]}
+                                active={currentSection == section}
+                                onClick={() => onSectionClick(section)}
+                            >
+                                {section !== 'Title' ? section : ""}
+                            </NavItem>
+                        ))
+                    }
                 </NavSection>
                 <SocialIcons>
                     <IconLink href="https://github.com/alecpalo" target="_blank" rel="noopener noreferrer" color={colorMapping[currentSection]}>
-                        <FontAwesomeIcon icon={faGithub} size="lg" />
+                        <FontAwesomeIcon icon={faGithub} size="xl" />
                     </IconLink>
                     <IconLink href="https://linkedin.com/in/apalo" target="_blank" rel="noopener noreferrer" color={colorMapping[currentSection]}>
-                        <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                        <FontAwesomeIcon icon={faLinkedin} size="xl" />
                     </IconLink>
                 </SocialIcons>
             </NavContainer>

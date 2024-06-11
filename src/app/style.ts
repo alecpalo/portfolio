@@ -137,7 +137,7 @@ export const Title = styled.h1`
     margin: 0;
 
     @media (max-width: 768px) {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 `;
 
@@ -159,7 +159,7 @@ export const Bio = styled.p`
     color: ${({ theme }) => theme.colors.subtext};
 
     @media (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.5rem;
         //padding: 0 1rem;
     }
 
@@ -277,6 +277,7 @@ export const ModalContent = styled(motion.div)`
     border-radius: 10px;
     max-width: 900px;
     width: 90%;
+    max-height: 90%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: left;
     position: relative;
@@ -400,6 +401,9 @@ export const NavItem = styled.div<{ active: boolean; color: string }>`
         cursor: pointer;
         color: ${({  color }) => color};
         font-weight: bold;
+    }
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
     }
 `;
 
