@@ -76,7 +76,6 @@ export const experiences = [
             'Worked closely with designers to create visually appealing and functional websites.'
         ]
     },
-    // Add other experiences...
 ];
 
 export const bio = "Hi, I'm Alec. I'm a passionate developer with experiences in various technologies including Next.js, TypeScript, and more. I love creating innovative solutions and working on exciting projects.";

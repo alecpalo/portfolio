@@ -85,15 +85,19 @@ export const ContentWrapper = styled.div`
     justify-content: center;
 `;
 
+
 export const TitleContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two equal columns */
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    //height: 100vh;
 
     @media (max-width: 768px) {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 `;
 
@@ -104,6 +108,7 @@ export const TextContainer = styled.div`
     width: 50%;
 
     @media (max-width: 768px) {
+        width: 100%;
         text-align: center;
         padding-right: 0;
         margin-bottom: 20px; /* Add some spacing between text and image */
@@ -155,11 +160,11 @@ export const Bio = styled.p`
 
     @media (max-width: 768px) {
         font-size: 1rem;
-        padding: 0 1rem;
+        //padding: 0 1rem;
     }
 
     @media (max-width: 480px) {
-        font-size: 0.875rem;
+        font-size: 1rem;
         padding: 0 0.5rem;
     }
 `;
@@ -174,7 +179,11 @@ export const ExperienceList = styled.div`
     margin: 0 auto;
 
     @media (max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
+        max-width: 500px;
     }
 `;
 

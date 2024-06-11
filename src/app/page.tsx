@@ -76,12 +76,6 @@ export default function Home() {
                 >
                     <ContentWrapper>
                         {section === 'Title' && (
-                            // <Title>
-                            //     Hey, I&apos;m&nbsp;
-                            //     <Name>
-                            //         Alec
-                            //     </Name>
-                            // </Title>
                             <TitleContainer>
                                 <TextContainer>
                                     <Title>
@@ -97,11 +91,11 @@ export default function Home() {
                             </TitleContainer>
                         )}
                         {section === 'Bio' && (
-                            // <AnimatedComponent>
+                            <AnimatedComponent>
                                 <Bio>
                                     {bio}
                                 </Bio>
-                            // </AnimatedComponent>
+                            </AnimatedComponent>
                         )}
                         {section === 'Experience' && (
                             <ExperiencesList openModal={openModal}/>
