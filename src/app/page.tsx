@@ -1,15 +1,15 @@
 'use client';
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
-import { Container, Section, ContentWrapper, Title, Name, Bio, ImageContainer, TitleContainer, TextContainer} from './style';
 import Modal from '@/_components/modal';
 import Contact from '../_components/contact';
 import ProjectsList from "@/_components/projects/projectsList";
 import { bio } from './utils';
-import ExperiencesList from "@/_components/experiences/experiencesList";
-import NavBar from "@/_components/nav";
 import { AnimatePresence } from 'framer-motion';
 import AnimatedComponent from "@/_components/animatedComponent";
+import NavBar from "@/_components/nav";
+import ExperiencesList from "@/_components/experiences/experiencesList";
+import './globals.css';
 
 const sections = ['Title', 'Bio', 'Experience', 'Projects', 'Contact'];
 
@@ -55,7 +55,7 @@ export default function Home() {
     };
 
     return (
-        <Container>
+        <div className="container">
             <NavBar
                 sections={sections}
                 currentSection={currentSection}
@@ -70,31 +70,32 @@ export default function Home() {
             </AnimatePresence>
 
             {sections.map((section) => (
-                <Section
+                <div
                     key={section}
                     id={section}
+                    className="section"
                 >
-                    <ContentWrapper>
+                    <div className="content-wrapper">
                         {section === 'Title' && (
-                            <TitleContainer>
-                                <TextContainer>
-                                    <Title>
+                            <div className="title-container">
+                                <div className="text-container">
+                                    <h1 className="title">
                                         Hey, I&apos;m&nbsp;
-                                        <Name>
+                                        <span className="name">
                                             Alec
-                                        </Name>
-                                    </Title>
-                                </TextContainer>
-                                <ImageContainer>
+                                        </span>
+                                    </h1>
+                                </div>
+                                <div className="image-container">
                                     <Image src="/me.png" alt="Catppuccin Logo" fill={true} />
-                                </ImageContainer>
-                            </TitleContainer>
+                                </div>
+                            </div>
                         )}
                         {section === 'Bio' && (
                             <AnimatedComponent>
-                                <Bio>
+                                <p className="bio">
                                     {bio}
-                                </Bio>
+                                </p>
                             </AnimatedComponent>
                         )}
                         {section === 'Experience' && (
@@ -106,9 +107,9 @@ export default function Home() {
                         {section == 'Contact' && (
                             <Contact/>
                         )}
-                    </ContentWrapper>
-                </Section>
+                    </div>
+                </div>
             ))}
-        </Container>
+        </div>
     );
 }

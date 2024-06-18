@@ -1,6 +1,7 @@
 // _components/Modal.tsx
 import React from 'react';
-import { Modal, ModalContent, CloseButton } from '@/app/style';
+import { motion } from 'framer-motion';
+import '../app/globals.css'; // Import the CSS file for modal styles
 
 interface ModalProps {
     onClose: () => void;
@@ -9,20 +10,22 @@ interface ModalProps {
 
 const ModalComponent: React.FC<ModalProps> = ({ onClose, children }) => {
     return (
-        <Modal
+        <motion.div
+            className="modal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0}}
+            exit={{ opacity: 0 }}
         >
-            <ModalContent
+            <motion.div
+                className="modal-content"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0}}
+                exit={{ opacity: 0, scale: 0 }}
             >
-                <CloseButton onClick={onClose}>×</CloseButton>
+                <button className="close-button" onClick={onClose}>×</button>
                 {children}
-            </ModalContent>
-        </Modal>
+            </motion.div>
+        </motion.div>
     );
 };
 

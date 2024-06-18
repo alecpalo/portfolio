@@ -1,6 +1,7 @@
 import React from "react";
 import * as DevIcons from "developer-icons";
-import { ProjectTitle, TechnologyList, TechnologyItem, ProjectDescription, ProjectLearnings, LearningsTitle, LearningsContent } from "@/app/style";
+import '../../app/globals.css';
+
 
 interface ProjectProps {
     title: string;
@@ -9,25 +10,25 @@ interface ProjectProps {
     learnings: string;
 }
 
-const Project = (project: ProjectProps) => {
-    return(
+const Project: React.FC<ProjectProps> = (project) => {
+    return (
         <>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <TechnologyList>
+            <h2 className="project-title">{project.title}</h2>
+            <ul className="technology-list">
                 {project.technologies.map((tech, index) => {
                     const IconComponent = DevIcons[tech.icon] as React.ElementType;
                     return (
-                        <TechnologyItem key={index} title={tech.name}>
+                        <li key={index} className="technology-item" title={tech.name}>
                             <IconComponent />
-                        </TechnologyItem>
+                        </li>
                     );
                 })}
-            </TechnologyList>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectLearnings>
-                <LearningsTitle>What I Learned</LearningsTitle>
-                <LearningsContent>{project.learnings}</LearningsContent>
-            </ProjectLearnings>
+            </ul>
+            <p className="project-description">{project.description}</p>
+            <div className="project-learnings">
+                <h3 className="learnings-title">What I Learned</h3>
+                <p className="learnings-content">{project.learnings}</p>
+            </div>
         </>
     );
 }

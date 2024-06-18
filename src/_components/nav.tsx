@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavItem, Nav, NavContainer, NavSection, SocialIcons, IconLink } from '@/app/style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import {useIsMobile} from "@/_components/useIsMobile";
+import { useIsMobile } from "@/_components/useIsMobile";
+import '../app/globals.css'; // Import the CSS file for navbar styles
 
 interface NavBarProps {
     sections: string[];
@@ -21,36 +21,36 @@ const colorMapping: { [key: string]: string } = {
 const NavBar: React.FC<NavBarProps> = ({ sections, currentSection, onSectionClick }) => {
     const isMobile = useIsMobile();
     return (
-        <Nav>
-            <NavContainer>
-                <NavSection>
+        <nav className="nav">
+            <div className="nav-container">
+                <div className="nav-section">
                     {isMobile ?
-                        <NavItem active={true} color={colorMapping[currentSection]}>
+                        <div className="nav-item active" style={{ color: colorMapping[currentSection] }}>
                             {currentSection}
-                        </NavItem>
-                    :
+                        </div>
+                        :
                         sections.map((section) => (
-                            <NavItem
+                            <div
                                 key={section}
-                                color={colorMapping[section]}
-                                active={currentSection == section}
+                                className={`nav-item ${currentSection === section ? 'active' : ''}`}
+                                style={{ color: currentSection === section ? colorMapping[section] : '' }}
                                 onClick={() => onSectionClick(section)}
                             >
                                 {section !== 'Title' ? section : ""}
-                            </NavItem>
+                            </div>
                         ))
                     }
-                </NavSection>
-                <SocialIcons>
-                    <IconLink href="https://github.com/alecpalo" target="_blank" rel="noopener noreferrer" color={colorMapping[currentSection]}>
+                </div>
+                <div className="social-icons">
+                    <a href="https://github.com/alecpalo" target="_blank" rel="noopener noreferrer" className="icon-link" style={{ color: colorMapping[currentSection] }}>
                         <FontAwesomeIcon icon={faGithub} size="xl" />
-                    </IconLink>
-                    <IconLink href="https://linkedin.com/in/apalo" target="_blank" rel="noopener noreferrer" color={colorMapping[currentSection]}>
+                    </a>
+                    <a href="https://linkedin.com/in/apalo" target="_blank" rel="noopener noreferrer" className="icon-link" style={{ color: colorMapping[currentSection] }}>
                         <FontAwesomeIcon icon={faLinkedin} size="xl" />
-                    </IconLink>
-                </SocialIcons>
-            </NavContainer>
-        </Nav>
+                    </a>
+                </div>
+            </div>
+        </nav>
     );
 };
 

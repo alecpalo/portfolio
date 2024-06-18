@@ -1,5 +1,5 @@
-import {ExperienceDate, ExperienceDetails, ResumeList, ResumeListItem, ExperienceTitle, PositionName, CompanyName} from "@/app/style";
 import React from "react";
+import '../../app/globals.css';
 
 interface ExperienceProps {
     title: string;
@@ -10,31 +10,31 @@ interface ExperienceProps {
     responsibilities: string[];
 }
 
-const Experience = (experience: ExperienceProps) => {
-    return(
+const Experience: React.FC<ExperienceProps> = (experience) => {
+    return (
         <>
-            <ExperienceTitle>
-                <PositionName>
+            <h2 className="experience-title">
+                <span className="position-name">
                     {experience.title}
-                </PositionName>
-                 &nbsp;@&nbsp;
-                <CompanyName>
+                </span>
+                &nbsp;@&nbsp;
+                <span className="company-name">
                     {experience.company}
-                </CompanyName>
-            </ExperienceTitle>
-            <ExperienceDate>
+                </span>
+            </h2>
+            <p className="experience-date">
                 {experience.startDate} - {experience.endDate}
-            </ExperienceDate>
-            <ExperienceDetails>
+            </p>
+            <p className="experience-details">
                 {experience.details}
-            </ExperienceDetails>
-            <ResumeList>
+            </p>
+            <ul className="resume-list">
                 {experience.responsibilities.map((responsibility, i) => (
-                    <ResumeListItem key={i}>
+                    <li key={i} className="resume-list-item">
                         {responsibility}
-                    </ResumeListItem>
+                    </li>
                 ))}
-            </ResumeList>
+            </ul>
         </>
     );
 }
