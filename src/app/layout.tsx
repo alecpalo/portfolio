@@ -1,15 +1,19 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'UMEB',
-    description: 'New UMEB Website',
+    title: 'Alec Palo',
+    description: 'My Portfolio',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body>
-                {children}
+        <head>
+            <link rel="icon" href="/favicon.ico"/>
+            <title> Alec Palo </title>
+        </head>
+        <body>
+        {children}
             </body>
         </html>
     );
