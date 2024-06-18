@@ -4,6 +4,11 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from './style';
 import React from 'react';
 
+// export const metadata = {
+//     title: 'UMEB',
+//     description: 'New UMEB Website',
+// }
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
@@ -12,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <GlobalStyle />
             <StyledComponentsRegistry>
                 {children}
-        </StyledComponentsRegistry>
+            </StyledComponentsRegistry>
         </ThemeProvider>
         </body>
         </html>

@@ -26,7 +26,7 @@ const Project = (project: ProjectProps) => {
             <ProjectDescription>{project.description}</ProjectDescription>
             <ProjectLearnings>
                 <LearningsTitle>What I Learned</LearningsTitle>
-                <LearningsContent>{project.description}</LearningsContent>
+                <LearningsContent>{project.learnings}</LearningsContent>
             </ProjectLearnings>
         </>
     );

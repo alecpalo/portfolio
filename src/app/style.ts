@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const theme = {
@@ -154,17 +154,17 @@ export const Name = styled.span`
 export const Bio = styled.p`
     font-size: 1.5rem;
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     color: ${({ theme }) => theme.colors.subtext};
 
     @media (max-width: 768px) {
         font-size: 1.5rem;
-        //padding: 0 1rem;
+        padding: 0 1rem;
     }
 
     @media (max-width: 480px) {
-        font-size: 1rem;
+        font-size: 1.25rem;
         padding: 0 0.5rem;
     }
 `;
@@ -485,6 +485,7 @@ export const LearningsContent = styled.p`
 export const ContactContainer = styled.div`
     display: flex;
     justify-content: center;
+    max-width: 1100px;
     align-items: center;
     min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.base}; // Background color
@@ -506,6 +507,10 @@ export const ContactText = styled.p`
     }
 
     @media (max-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+    
+    @media (max-width: 480px) {
+        font-size: 1.25rem;
     }
 `;
